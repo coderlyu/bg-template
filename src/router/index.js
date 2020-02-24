@@ -23,6 +23,31 @@ const routes = [
     ]
   },
   {
+    path: '/data',
+    redirect: '/data/students',
+    component: Layout,
+    children: [
+      {
+        path: 'students',
+        name: 'studentsPage',
+        component: () => import('@/views/data/students.vue'),
+        meta: { title: '学生列表' }
+      },
+      {
+        path: 'teachers',
+        name: 'teachersPage',
+        component: () => import('@/views/data/teachers.vue'),
+        meta: { title: '教师列表' }
+      },
+      {
+        path: 'categories',
+        name: 'categoriesPage',
+        component: () => import('@/views/data/categories.vue'),
+        meta: { title: '类别列表' }
+      }
+    ]
+  },
+  {
     path: '/profile',
     redirect: '/profile/index',
     component: Layout,

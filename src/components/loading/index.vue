@@ -39,9 +39,9 @@ export default {
 
 .dot {
   position: relative;
-  width: 2em;
-  height: 2em;
-  margin: 0.8em;
+  width: 20px;
+  height: 20px;
+  margin: 8px;
   border-radius: 50%;
 }
 
@@ -93,6 +93,12 @@ export default {
   80%,
   100% {
     opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .dot {
+    width: 10px;
+    height: 10px;
   }
 }
 </style>

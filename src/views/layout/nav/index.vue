@@ -2,20 +2,20 @@
   <div class="my-nav">
     <div class="mask" v-show="leftOpen" @click="$store.dispatch('app/closeSideBar')"></div>
     <nav class="bg-white" :style="leftOpen ? 'left: 0': ''">
-      <el-menu :default-active="activeIndex" class="el-menu-demo">
+      <el-menu :default-active="$route.name" class="el-menu-demo">
         <router-link to="/home">
           <el-menu-item index="homePage"><i class="el-icon-house"></i> 主页</el-menu-item>
         </router-link>
-        <el-submenu index="2">
+        <el-submenu index="data">
           <template slot="title"><i class="el-icon-data-analysis"></i> 数据</template>
-          <router-link to="/home">
-            <el-menu-item index="2-1">教师</el-menu-item>
+          <router-link to="/data/teachers">
+            <el-menu-item index="teachersPage">教师</el-menu-item>
           </router-link>
-          <router-link to="/home">
-            <el-menu-item index="2-2">学生</el-menu-item>
+          <router-link to="/data/students">
+            <el-menu-item index="studentsPage">学生</el-menu-item>
           </router-link>
-          <router-link to="/home">
-            <el-menu-item index="2-3">分类</el-menu-item>
+          <router-link to="/data/categories">
+            <el-menu-item index="categoriesPage">分类</el-menu-item>
           </router-link>
         </el-submenu>
         <router-link to="/profile">
@@ -31,9 +31,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'navBar',
   data () {
-    return {
-      activeIndex: 'homePage'
-    }
+    return {}
   },
   computed: {
     ...mapGetters([

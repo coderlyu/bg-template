@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <router-view/>
-    <Loading v-show="isLoading" />
+    <transition name="fade">
+      <Loading v-show="isLoading" />
+    </transition>
   </div>
 </template>
 
@@ -45,5 +47,13 @@ export default {
 <style lang="scss">
 #app {
   height: 100%;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
 </style>
