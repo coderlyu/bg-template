@@ -44,6 +44,12 @@ const routes = [
         name: 'categoriesPage',
         component: () => import('@/views/data/categories.vue'),
         meta: { title: '类别列表' }
+      },
+      {
+        path: 'data',
+        name: 'dataPage',
+        component: () => import('@/views/data/data.vue'),
+        meta: { title: '图表' }
       }
     ]
   },

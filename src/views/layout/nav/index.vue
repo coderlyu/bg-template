@@ -9,13 +9,16 @@
         <el-submenu index="data">
           <template slot="title"><i class="el-icon-data-analysis"></i> 数据</template>
           <router-link to="/data/teachers">
-            <el-menu-item index="teachersPage">教师</el-menu-item>
+            <el-menu-item index="teachersPage"><i class="el-icon-s-custom"></i> 教师</el-menu-item>
           </router-link>
           <router-link to="/data/students">
-            <el-menu-item index="studentsPage">学生</el-menu-item>
+            <el-menu-item index="studentsPage"><i class="el-icon-s-check"></i> 学生</el-menu-item>
           </router-link>
           <router-link to="/data/categories">
-            <el-menu-item index="categoriesPage">分类</el-menu-item>
+            <el-menu-item index="categoriesPage"><i class="el-icon-s-grid"></i> 分类</el-menu-item>
+          </router-link>
+          <router-link to="/data/data">
+            <el-menu-item index="dataPage"><i class="el-icon-s-data"></i> 图表</el-menu-item>
           </router-link>
         </el-submenu>
         <router-link to="/profile">

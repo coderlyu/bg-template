@@ -1,6 +1,6 @@
 <template>
   <header class="bg-white my-header flex-bt">
-    <h1 v-if="!isMobile">后台管理模板</h1>
+    <h1 v-if="!isMobile" @click="toHome" class="title">后台管理模板</h1>
     <i v-else :class="leftOpen ? 'el-icon-s-fold': 'el-icon-s-unfold'" @click="toggleSideBar"></i>
     <el-dropdown>
       <span class="el-dropdown-link">
@@ -8,8 +8,12 @@
         coderly<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item><i class="el-icon-house"></i>个人中心</el-dropdown-item>
-        <el-dropdown-item><i class="el-icon-setting"></i>设置</el-dropdown-item>
+        <router-link to="/">
+          <el-dropdown-item><i class="el-icon-house"></i>Home</el-dropdown-item>
+        </router-link>
+        <router-link to="/profile">
+          <el-dropdown-item><i class="el-icon-setting"></i>设置</el-dropdown-item>
+        </router-link>
         <el-dropdown-item><i class="el-icon-position"></i>退出</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -31,12 +35,26 @@ export default {
   methods: {
     toggleSideBar () {
       this.$store.dispatch('app/toggleSideBar')
+    },
+    toHome () {
+      this.$router.push('/')
+    },
+    toUser () {
+      this.$router.push('/profile')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.my-header {
+  h1.title {
+    color: #b3d465;
+    text-shadow: 2px 2px 3px #ed536b, -2px -2px 3px #000;
+    cursor: pointer;
+    line-height: 60px;
+  }
+}
   .el-dropdown-link {
     cursor: pointer;
     color: #606266;

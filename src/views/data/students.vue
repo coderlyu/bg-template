@@ -42,7 +42,7 @@
       </div>
     </template>
     <template v-else>
-      <h3>教师</h3>
+      <h3>学生</h3>
       <user-item @delete="handleDelete" @edit="handleEdit" :tableData="tableData" />
     </template>
     <div class="margin20 over-flow-auto flex-dc-end">

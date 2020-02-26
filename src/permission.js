@@ -14,15 +14,15 @@ router.beforeEach((to, from, next) => {
   // 获取token，未登录跳转登陆界面，否则对用户权限进行验证
 
   // 页面载入动画
-  store.dispatch('app/changeIsLoading', { isLoading: true })
+  // store.dispatch('app/changeIsLoading', { isLoading: true })
   next()
 })
 
 router.afterEach((to, from) => {
   NProgress.done() // 结束Progress
-  setTimeout(() => {
-    store.dispatch('app/changeIsLoading', { isLoading: false })
-  }, 1000)
+  // setTimeout(() => {
+  //   store.dispatch('app/changeIsLoading', { isLoading: false })
+  // }, 1000)
   const title = to.meta.title
   setTimeout(() => {
     window.scrollTo(0, 0)
