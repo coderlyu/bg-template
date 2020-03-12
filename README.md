@@ -1,4 +1,6 @@
-# bg-template
+# bg-template[后台管理模板]
+> 待完善
+在线预览：http://bg.coderly.cn/
 
 ## Project setup
 ```

@@ -10,8 +10,15 @@ import './permission' // 引入路由守卫
 import Blob from './excel/Blob' // 引入导出excel的两个文件
 import Export2Excel from './excel/Export2Excel.js' // 引入导出excel的两个文件
 import VCharts from 'v-charts'
+import xss from 'xss'
 Vue.config.productionTip = false
+
 Vue.use(VCharts)
+
+Object.defineProperty(Vue.prototype, '$xss', {
+  value: xss
+})
+
 new Vue({
   router,
   store,

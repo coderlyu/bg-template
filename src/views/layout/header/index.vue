@@ -4,7 +4,7 @@
     <i v-else :class="leftOpen ? 'el-icon-s-fold': 'el-icon-s-unfold'" @click="toggleSideBar"></i>
     <el-dropdown>
       <span class="el-dropdown-link">
-        <img class="avatar" src="../../../assets/coderly.jpg" alt="头像">
+        <img class="avatar" :src="avatar" alt="头像">
         coderly<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
@@ -29,7 +29,8 @@ export default {
   computed: {
     ...mapGetters([
       'isMobile',
-      'leftOpen'
+      'leftOpen',
+      'avatar'
     ])
   },
   methods: {

@@ -46,14 +46,14 @@
       <user-item @delete="handleDelete" @edit="handleEdit" :tableData="tableData" />
     </template>
     <div class="margin20 over-flow-auto flex-dc-end">
-      <p>共<span class="margin5 tag-red tag">{{ total }}</span>条</p>
+      <!-- <p>共<span class="margin5 tag-red tag">{{ total }}</span>条</p> -->
       <el-pagination
         background
         @current-change="handleCurrentChange"
         :page-size="pageSize"
         :current-page="currentPage"
         :pager-count="5"
-        layout="prev, pager, next"
+        layout="total, prev, pager, next"
         :total="total">
       </el-pagination>
     </div>
@@ -230,5 +230,10 @@ export default {
 a:hover {
   color: rgba(237, 84, 107, .4);
   border-bottom: 1px dotted rgba(237, 84, 107, 1);
+}
+@media (max-width:768px) {
+  /deep/ .el-pager li:not(.active) {
+      display: none;
+  }
 }
 </style>

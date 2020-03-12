@@ -23,6 +23,7 @@ router.afterEach((to, from) => {
   // setTimeout(() => {
   //   store.dispatch('app/changeIsLoading', { isLoading: false })
   // }, 1000)
+  store.dispatch('app/changeSideBar', { leftOpen: false })
   const title = to.meta.title
   setTimeout(() => {
     window.scrollTo(0, 0)
